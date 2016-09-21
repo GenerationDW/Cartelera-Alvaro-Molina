@@ -156,7 +156,7 @@ app.controller("generoController", function ($scope, $rootScope, $http){
 app.directive('barraNavegacion', function() {
     return {
         restrict : 'E',
-        templateUrl : "barraNavegacion.html",
+        templateUrl : "vistas/barraNavegacion.html",
         controller: "directiveController"
     }
 });
