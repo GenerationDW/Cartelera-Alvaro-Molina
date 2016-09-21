@@ -1,0 +1,75 @@
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+				<div class="col-sm-9"> 
+   				<input type="text" class="form-control" placeholder="Busca una pelicula" ng-model="buscar" />
+   		</div>
+   		<div class="col-sm-3">	
+   				<button class="btn btn-primary" ng-click="buscarPeliculas();">Buscar Por Titulo</button>
+   		</div>		
+	</div>
+</div>
+</br>
+<div class="row" ng-show="peliculas.results"> <!-- Filtra por titulo, para una busqueda maś especifica y ordena por titulo, fecha de estreno y valoración  -->
+	<div class="col-sm-3 col-sm-offset-3">
+			<input type="text" class="form-control" placeholder="Filtra" ng-model="q.title" /> 
+  </div>
+  <div class="col-sm-4">
+    <button class="btn btn-info" ng-click="sortBy('title')" >Titulo</button>
+    <span class="sortorder" ng-show="propertyName === 'title'" ng-class="{reverse: reverse}"></span>
+    <button class="btn btn-info" ng-click="sortBy('release_date')" >Fecha de Estreno</button>
+    <span class="sortorder" ng-show="propertyName === 'release_date'" ng-class="{reverse: reverse}"></span>
+    <button class="btn btn-info" ng-click="sortBy('vote_average')" >Valoración</button>
+    <span class="sortorder" ng-show="propertyName === 'vote_average'" ng-class="{reverse: reverse}"></span>
+  </div>
+</div>
+</br>
+<div class="container">
+  <div class="row">
+    <div ng-repeat="x in peliculas">
+      <div ng-repeat="y in x | filter: q | orderBy:propertyName:reverse" ng-hide="!y.title || peliculaConcreta">
+        <div class="col-xs-12 col-sm-4
+        ">
+          <div class="panel panel-info" ng-click="ampliarFicha();" ng-model="y.title">
+                <div class="panel-heading">{{y.title}}</div>
+                <div class="panel-body"><img ng-src="http://image.tmdb.org/t/p/w185{{y.poster_path}}" class="img-responsive imagen-poster" alt="Image"></div>
+            </div>
+          </div>  
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="panel panel-success" ng-show="peliculaConcreta" ng-hide="!peliculaConcreta">
+      <div class="panel-heading">
+        <h3 class="panel-title negrita">{{peliculaConcreta.title}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-xs-5">
+          <img ng-src="http://image.tmdb.org/t/p/w185{{peliculaConcreta.poster_path}}" class="img-responsive imagen-poster" alt="Image"/>
+        </br>
+          <div><span class="negrita">Votos:</span> {{peliculaConcreta.vote_count}} </div>
+          <div><span class="negrita">Puntuación Media de los Votros:</span> {{peliculaConcreta.vote_average}} </div>
+        </div>
+        <div class="col-xs-7">
+          <div> <span class="negrita">Fecha de Estreno:</span> {{peliculaConcreta.release_date}} </div>
+   
+          <div> <span class="negrita">Trama:</span> {{peliculaConcreta.overview}} </div>
+          </br>
+          <button type="button" class="btn btn-info" ng-click="peliculaConcreta=undefined">Volver</button>
+
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+</div>  
+
+
+
+
+
+

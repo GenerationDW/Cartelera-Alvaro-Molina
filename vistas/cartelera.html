@@ -1,0 +1,28 @@
+<div class="row"> <!-- Paginación con UI-BOOTSTRAP, permite navegar por las paginas -->
+  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" ng-change="cambiarPagina();"></ul>
+  </div>
+</div> 
+
+</br>
+
+<div class="container" data-ng-init="alCargar();"> 
+  <div class="row">
+    <div ng-repeat="x in todasPeliculas">
+      <div ng-repeat="y in x" ng-hide="!y.title || peliculaConcreta">
+        <div class="col-xs-12 col-sm-4">
+          <div class="panel panel-info" ng-click="ampliarFicha();" ng-model="y.title">
+                <div class="panel-heading">{{y.title}}</div>
+                <div class="panel-body"><img ng-src="http://image.tmdb.org/t/p/w185{{y.poster_path}}" class="img-responsive imagen-poster" alt="Image"></div>
+            </div>
+          </div>  
+      </div>
+    </div>
+  </div>  
+</div>
+
+<div class="row"> <!-- Otra paginación abajo, para facilitar la navegación -->
+  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages" ng-change="cambiarPagina();"></ul>
+  </div>
+</div>

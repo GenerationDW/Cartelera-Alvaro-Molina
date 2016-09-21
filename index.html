@@ -1,0 +1,67 @@
+	<!DOCTYPE html>
+<html ng-app="miAplicacion" ng-controller="mainController">
+	<head>
+		<title>Videos Club</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet"  href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/css.css">
+	</head>
+<body>
+  <div class="jumbotron"> <!-- Empieza el Jumbotron -->
+    <div class="container text-center">
+      <h1 class="stroke">Videos Club</p>
+      <p class="stroke">Sobreviviendo a la Era Digital</p>
+    </div>
+  </div> <!-- Acaba el Jumbotron -->
+  <barra-navegacion></barra-navegacion><!-- Etiqueta personalizada que llama a la barra de navegación -->
+  <div class="container"> <!-- Comienzan los botones para navegar por las vistas -->
+    <div class="row">
+      <div class="col-xs-4">
+        <a href="#/cartelera"><button type="button"  class="btn btn-default">Muestrame Todas Las Peliculas</button></a>
+      </div>
+      <div class="col-xs-4">
+        <a ng-href="#/cartelera/genero"><button type="button" class="btn btn-default">Buscar Las Pelisculas Por Genero</button></a>
+      </div>
+      <div class="col-xs-4">
+        <a ng-href="#/cartelera/titulo"><button type="button" class="btn btn-default">Buscar Las Peliculas Por Titulo</button></a>
+      </div>
+    </div>
+  </div> <!-- Finalizan los botones para navegar por las vistas -->
+  </br>
+  <!-- Vista -->
+  <div ng-view> </div>
+  <!-- Vista -->
+
+  <footer class="container-fluid text-center"> <!-- Pie de Pagina, meramente decorativos -->
+    <p>(cc) Copyright</p>
+    <form class="form-inline">Suscribete:
+      <input type="email" class="form-control" size="50" placeholder="Dirección de e-Mail">
+      <button type="button" class="btn btn-danger">Enviar</button>
+    </form>
+</footer>
+
+
+
+	<!-- Librerias -->
+		<script src="js/vendor/jquery-2.2.4.min.js"></script> <!-- Necesitamos JQuery para Bootstrap -->
+		<script src="js/vendor/bootstrap.min.js"></script>
+
+
+		<script src="js/vendor/angular.min.js"></script>
+		<script src="js/vendor/angular-route.min.js"></script>
+		<script src="js/vendor/ui-bootstrap-tpls-2.0.2.min.js"> </script> <!-- Permite cosas como la paginaión -->
+		<script src="js/vendor/angular-touch.min.js"></script>	<!-- Necesario para ui-bootstrap -->
+		<script src="js/vendor/angular-animate.min.js"></script> <!-- Necesario para ui-bootstrap -->
+
+
+
+
+
+		
+
+	<!-- Scripts -->
+		<script src="js/app.js"></script>
+
+	</body>
+</html>

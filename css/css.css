@@ -1,0 +1,79 @@
+
+
+.panel-heading {
+	font-weight: bold;
+}
+.panel {
+	cursor: pointer;
+  
+ 
+}
+.imagen-poster {
+	border: 0;
+	margin: auto;
+
+  width: auto;
+	border-radius: 7px;
+}
+
+.puntuacion-metascore {
+  background-color: #6c3;
+  height: 1.9em;
+  width: 1.9em;
+  font-size: 15px;
+  line-height: 1.9em;
+  vertical-align: middle;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+}
+.negrita {
+  font-weight: bold;
+}
+
+
+.jumbotron {
+  background-image: url("../imagenes/patron.jpg");
+}
+.opaco {
+  opacity: 0.5;
+}
+.resaltado {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.jumbotron > .container > .stroke {
+text-align: center;
+color: white;
+font-family: Georgia, serif;
+font-weight: bold;
+letter-spacing: 0;
+text-shadow: -2px -2px 2px #333, 2px -2px 2px #333, -2px 2px 2px #333, 2px 2px 2px #333;
+opacity: 2;
+}
+/* Genera los triangulitos de arriba y abajo */
+.sortorder:after {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}
+
+ /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
